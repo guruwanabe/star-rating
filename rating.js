@@ -22,12 +22,12 @@
                 //ID is sent to hidden input so we can send the value
                 var checkedValue = $(this).attr('id');
                 
-                if(!($(this).hasClass('checked'))){
+                if(!($(this).is(':checked') || $(this).hasClass('checked'))){
                     $(this).addClass('checked') && $(this).nextAll().addClass('checked');
                     $('input[name=rating]').val(checkedValue).prop('checked', true);
                 }else{
                     $(this).prevAll().removeClass('checked');
-                    $('input[name=rating]').val(checkedValue).prop('checked', true);
+                    $(this).parent().find('input[name=rating]').val(checkedValue).prop('checked', true);
                 }
 
             });
