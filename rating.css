@@ -4,6 +4,7 @@
   unicode-bidi: bidi-override;
 }
 .rating span.star {
+  cursor: pointer;
   display: inline-block;
   font-family: "FontAwesome";
   font-style: normal;
