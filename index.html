@@ -1,0 +1,75 @@
+<head>
+	<title>CSS Star rating</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<link href="rating.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		 <div class="row">
+        <div class="col-md-12">
+          <h1>Ratings simplified</h1>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Examples</h3>
+            </div>
+            <div class="panel-body">
+            <p>Unlimited colors and sizes.</p>
+              <div class="form-group">
+               <span class="rating rating-default rating-xs">
+                   <span id="5" for="rating" class="star" data-toggle="tooltip" title="Extremly satisfied"></span><!-- removes white space
+                --><span id="4" for="rating" class="star" data-toggle="tooltip" title="Satisfied"></span><!--
+                --><span id="3" for="rating" class="star" data-toggle="tooltip" title="It's ok"></span><!--
+                --><span id="2" for="rating" class="star" data-toggle="tooltip" title="Unsatisfied"></span><!--
+                --><span id="1" for="rating" class="star" data-toggle="tooltip" title="You guys need to get another job"></span><!---->
+                   <input type="hidden" value="5" name="rating">
+                </span>
+              </div>
+              <div class="form-group">
+               <span class="rating rating-default rating-sm">
+                   <span id="5" for="rating" class="star" data-toggle="tooltip" title="Extremly satisfied"></span><!-- removes white space
+                --><span id="4" for="rating" class="star" data-toggle="tooltip" title="Satisfied"></span><!--
+                --><span id="3" for="rating" class="star" data-toggle="tooltip" title="It's ok"></span><!--
+                --><span id="2" for="rating" class="star" data-toggle="tooltip" title="Unsatisfied"></span><!--
+                --><span id="1" for="rating" class="star" data-toggle="tooltip" title="You guys need to get another job"></span><!---->
+                   <input type="hidden" value="5" name="rating">
+                </span>
+              </div>
+              <div class="form-group">
+               <span class="rating rating-default">
+                   <span id="5" for="rating" class="star" data-toggle="tooltip" title="Extremly satisfied"></span><!-- removes white space
+                --><span id="4" for="rating" class="star" data-toggle="tooltip" title="Satisfied"></span><!--
+                --><span id="3" for="rating" class="star" data-toggle="tooltip" title="It's ok"></span><!--
+                --><span id="2" for="rating" class="star" data-toggle="tooltip" title="Unsatisfied"></span><!--
+                --><span id="1" for="rating" class="star" data-toggle="tooltip" title="You guys need to get another job"></span><!---->
+                   <input type="hidden" value="5" name="rating">
+                </span>
+              </div>
+              <div class="form-group">
+                <span class="rating rating-primary rating-lg">
+                   <span id="5" for="rating" class="star" data-toggle="tooltip" title="Extremly satisfied"></span><!-- removes white space
+                --><span id="4" for="rating" class="star" data-toggle="tooltip" title="Satisfied"></span><!--
+                --><span id="3" for="rating" class="star" data-toggle="tooltip" title="It's ok"></span><!--
+                --><span id="2" for="rating" class="star" data-toggle="tooltip" title="Unsatisfied"></span><!--
+                --><span id="1" for="rating" class="star" data-toggle="tooltip" title="You guys need to get another job"></span><!---->
+                   <input type="hidden" value="5" name="rating">
+                </span>
+              </div>
+              <div class="form-group">
+                <textarea style="resize: vertical;" class="form-control" rows="8" cols="40" name="text" placeholder="Say something about it"></textarea>
+              </div>
+              <br>
+              <a class="btn btn-primary" id="button-review">Send review</a>
+            </div>
+          </div>
+        </div>
+      </div>
+	</div>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="rating.js"></script>
+</html>
