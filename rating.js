@@ -24,7 +24,7 @@
                 
                 if(!($(this).is(':checked') || $(this).hasClass('checked'))){
                     $(this).addClass('checked') && $(this).nextAll().addClass('checked');
-                    $('input[name=rating]').val(checkedValue).prop('checked', true);
+                    $(this).parent().find('input[name=rating]').val(checkedValue).prop('checked', true);
                 }else{
                     $(this).prevAll().removeClass('checked');
                     $(this).parent().find('input[name=rating]').val(checkedValue).prop('checked', true);
