@@ -13,29 +13,33 @@
   content: "";
   padding: 2px;
 }
-.rating span.star:hover::before, 
+.rating span.star:hover::before,
+.rating span.star:checked::before,  
 .rating span.star.checked::before, 
 .rating span.star:hover ~ span.star::before, 
-.rating span.star.checked ~ span.star.checked::before {
+.rating span.star:checked ~ span.star:checked::before,
+.rating span.star.checked ~ span.star.checked::before  {
   content: "";
 }
 /*SIZES*/
 .rating-xs {
-	font-size: 10px;
+  font-size: 10px;
 }
 .rating-sm {
-	font-size: 14px;
+  font-size: 14px;
 }
 .rating-lg {
-	font-size: 36px;
+  font-size: 36px;
 }
 /*COLORS*/
 .rating-default span.star::before {
   color: #a9a9a9;
 }
-.rating-default span.star:hover::before, 
+.rating-default span.star:hover::before,
+.rating-default span.star:checked::before,   
 .rating-default span.star.checked::before, 
 .rating-default span.star:hover ~ span.star::before, 
+.rating-default span.star:checked ~ span.star:checked::before,
 .rating-default span.star.checked ~ span.star.checked::before {
   color: #000000;
 }
@@ -43,8 +47,10 @@
   color: #a9a9a9;
 }
 .rating-primary span.star:hover::before, 
+.rating-default span.star:checked::before,  
 .rating-primary span.star.checked::before, 
 .rating-primary span.star:hover ~ span.star::before, 
+.rating-primary span.star:checked ~ span.star:checked::before,
 .rating-primary span.star.checked ~ span.star.checked::before {
   color: #FFB00A;
 }
