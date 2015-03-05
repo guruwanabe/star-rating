@@ -23,13 +23,13 @@
 }
 /*SIZES*/
 .rating-xs {
-	font-size: 10px;
+  font-size: 10px;
 }
 .rating-sm {
-	font-size: 14px;
+  font-size: 14px;
 }
 .rating-lg {
-	font-size: 36px;
+  font-size: 36px;
 }
 /*COLORS*/
 .rating-default span.star::before {

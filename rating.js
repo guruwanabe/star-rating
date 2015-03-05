@@ -62,7 +62,7 @@
                         success: function(data) {
                             if (data['error']) {
                                 $('.form-group').first().before('<div class="alert alert-warning">' + data['error'] + '</div>');
-                                
+
                                 alert('Oups, we got an error');
                             }
                             if (data['success']) {
