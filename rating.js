@@ -19,15 +19,23 @@
 		},
         rating: function() {
             $('.star').on('click hover', function(){
-                //ID is sent to hidden input so we can send the value
+                //ID is set to hidden input so we can send the value
                 var checkedValue = $(this).attr('id');
                 
                 if(!($(this).is(':checked') || $(this).hasClass('checked'))){
                     $(this).addClass('checked') && $(this).nextAll().addClass('checked');
-                    $(this).parent().find('input[name=rating]').val(checkedValue).prop('checked', true);
+                    $(this).parent().find('input[name=rating]').prop('checked', true).val(checkedValue);
                 }else{
                     $(this).prevAll().removeClass('checked');
-                    $(this).parent().find('input[name=rating]').val(checkedValue).prop('checked', true);
+                    $(this).parent().find('input[name=rating]').prop('checked', false).val(checkedValue);
+                }
+
+            });
+            $('.star').hover(function(){
+                if(!$(this).hasClass('checked')){
+                    $(this).addClass('checked') && $(this).nextAll().addClass('checked');
+                }else{
+                    $(this).prevAll().removeClass('checked');
                 }
 
             });
@@ -46,10 +54,10 @@
         sendData:function() {
             $('#button-review').on('click', function() {
                 $.ajax({
-                    url: 'yourseverpage.php',
+                    url: 'https://github.com/guruwanabe/star-rating/star',
                     type: 'post',
                     dataType: 'json',
-                    data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
+                    data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : ''),
                         beforeSend: function() {
                             $('.alert-warning, .alert-success').remove();
                             $('#button-review').attr('disabled', true);
