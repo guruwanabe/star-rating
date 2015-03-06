@@ -54,7 +54,7 @@
         sendData:function() {
             $('#button-review').on('click', function() {
                 $.ajax({
-                    url: 'https://github.com/guruwanabe/star-rating/star',
+                    url: 'http://www.yourserverpage.php',
                     type: 'post',
                     dataType: 'json',
                     data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : ''),
