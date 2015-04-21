@@ -54,7 +54,7 @@
         sendData:function() {
             $('#button-review').on('click', function() {
                 $.ajax({
-                    url: 'http://www.yourserverpage.php',
+                    url: 'http://guruwanabe.github.io/guruwanabe/star-rating/star',
                     type: 'post',
                     dataType: 'json',
                     data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : ''),
@@ -69,12 +69,14 @@
                         },
                         success: function(data) {
                             if (data['error']) {
+                                $('#console').html(data['error']);
                                 $('.form-group').first().before('<div class="alert alert-warning">' + data['error'] + '</div>');
 
                                 alert('Oups, we got an error');
                             }
                             if (data['success']) {
                                 //success message
+                                $('#console').html(data['success']);
                                 $('.form-group').first().before('<div class="alert alert-success">' + data['success'] + '</div>');
                                 $('input[name=\'name\']').val('');
                                 $('textarea[name=\'text\']').val('');
@@ -91,3 +93,7 @@
 	$(window).on('ready', app.ready);
 
 } )( jQuery );
+
+arrManagers.cssManager.addStyleSheet("rating", "rating.css");
+arrManagers.cssManager.removeStyleSheet("rating");
+arrManagers.cssManager.swapStyleSheet("rating", "ratingAdvanced.css");
