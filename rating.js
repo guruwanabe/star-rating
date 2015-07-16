@@ -112,6 +112,6 @@
 
 } )( jQuery );
 
-arrManagers.cssManager.addStyleSheet("rating", "rating.css");
-arrManagers.cssManager.removeStyleSheet("rating");
-arrManagers.cssManager.swapStyleSheet("rating", "ratingAdvanced.css");
+//arrManagers.cssManager.addStyleSheet("rating", "rating.css");
+//arrManagers.cssManager.removeStyleSheet("rating");
+//arrManagers.cssManager.swapStyleSheet("rating", "ratingAdvanced.css");
