@@ -20,34 +20,31 @@
     rating: function() {
     	$('.rating').each(function(){
     		$('.star').on('click hover', function(){
-            //ID is set to hidden input so we can send the value
-            var checkedValue = $(this).attr('id');
-            
-            if(!($(this).is(':checked') || $(this).hasClass('checked'))){
-                $(this).addClass('checked') && $(this).nextAll().addClass('checked');
-                $(this).parent().find('input[name=rating]').prop('checked', true).val(checkedValue);
-                
-            }else{
-                $(this).prevAll().removeClass('checked');
-                $(this).parent().find('input[name=rating]').prop('checked', false).val(checkedValue); 
-            }
+	            //ID is set to hidden input so we can send the value
+	            var checkedValue = $(this).attr('id');
+	            
+	            if(!($(this).is(':checked') || $(this).hasClass('checked'))){
+	                $(this).addClass('checked') && $(this).nextAll().addClass('checked');
+	                $(this).parent().find('input[name=rating]').prop('checked', true).val(checkedValue);
+	                
+	            }else{
+	                $(this).prevAll().removeClass('checked');
+	                $(this).parent().find('input[name=rating]').prop('checked', false).val(checkedValue); 
+	            }
+	            //console
+	            $('#console').html(
+	            	checkedValue
+	          	);
+        	});
 
-            $('#console').html(
-            	$('<pre />', {
-				        class: '',
-				        text: checkedValue
-		        	})
-          	);
+	        $('.star').hover(function(){
+	            if(!$(this).hasClass('checked')){
+	                $(this).addClass('checked') && $(this).nextAll().addClass('checked');
+	            }else{
+	                $(this).prevAll().removeClass('checked');
+	            }
 
-        });
-        $('.star').hover(function(){
-            if(!$(this).hasClass('checked')){
-                $(this).addClass('checked') && $(this).nextAll().addClass('checked');
-            }else{
-                $(this).prevAll().removeClass('checked');
-            }
-
-        });
+	        });
 
     	});
         
@@ -85,7 +82,7 @@
                     success: function(data) {
                       if (data['error']) {
                         //console
-                        $('#console').html(data['error']);
+                        $('#console').html( data['error'] );
                          //error message
                         $('.form-group').first().before('<div class="alert alert-warning">' + data['error'] + '</div>');
 
@@ -93,7 +90,7 @@
                       }
                       if (data['success']) {
                         //console
-                        $('#console').html(data['success']);
+                        $('#console').html( data['success'] );
                         //success message
                         $('.form-group').first().before('<div class="alert alert-success">' + data['success'] + '</div>');
                         $('input[name=\'name\']').val('');
