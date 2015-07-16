@@ -33,7 +33,7 @@
 	            }
 	            //console
 	            $('#console').html(
-	            	checkedValue, request.getResponseHeader('some_header')
+	            	checkedValue
 	          	);
         	});
 
