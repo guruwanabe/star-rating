@@ -18,17 +18,26 @@
       app.sendData();
 		},
     rating: function() {
-        $('.star').on('click hover', function(){
+    	$('.rating').each(function(){
+    		$('.star').on('click hover', function(){
             //ID is set to hidden input so we can send the value
             var checkedValue = $(this).attr('id');
             
             if(!($(this).is(':checked') || $(this).hasClass('checked'))){
                 $(this).addClass('checked') && $(this).nextAll().addClass('checked');
                 $(this).parent().find('input[name=rating]').prop('checked', true).val(checkedValue);
+                
             }else{
                 $(this).prevAll().removeClass('checked');
-                $(this).parent().find('input[name=rating]').prop('checked', false).val(checkedValue);
+                $(this).parent().find('input[name=rating]').prop('checked', false).val(checkedValue); 
             }
+
+            $('#console').html(
+            	$('<pre />', {
+				        class: '',
+				        text: checkedValue
+		        	})
+          	);
 
         });
         $('.star').hover(function(){
@@ -39,6 +48,9 @@
             }
 
         });
+
+    	});
+        
     },
     toolTips: function(){
         var tooltips = $('[data-toggle="tooltip"]'),
@@ -53,12 +65,12 @@
     },
     sendData:function() {
         //here your backend url
-        var ratingUrl = 'http://www.e-tutungerie.ro/index.php?route=product/product/write&product_id=182';
+        var strRatingUrl = '//www.e-tutungerie.ro/index.php?route=product/product/write&product_id=182';
 
         $('#button-review').on('click', function() {
             $.ajax({
                 type: 'POST',
-                url: ratingUrl,
+                url: strRatingUrl,
                 dataType: 'json',
                 data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : ''),
                     beforeSend: function() {
