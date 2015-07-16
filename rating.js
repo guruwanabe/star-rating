@@ -79,10 +79,10 @@
                       $('#button-review').attr('disabled', false);
                       $('.alert-info').remove();   
                     },
-                    success: function(data) {
+                    success: function(data, request) {
                       if (data['error']) {
                         //console
-                        $('#console').html( data['error'] );
+                        $('#console').html( data['error'], request.getResponseHeader('some_header') );
                          //error message
                         $('.form-group').first().before('<div class="alert alert-warning">' + data['error'] + '</div>');
 
@@ -90,7 +90,7 @@
                       }
                       if (data['success']) {
                         //console
-                        $('#console').html( data['success'] );
+                        $('#console').html( data['success'], request.getResponseHeader('some_header') );
                         //success message
                         $('.form-group').first().before('<div class="alert alert-success">' + data['success'] + '</div>');
                         $('input[name=\'name\']').val('');
