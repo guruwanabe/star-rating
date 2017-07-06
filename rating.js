@@ -62,7 +62,7 @@
     },
     sendData:function() {
         //here your backend url
-        var strRatingUrl = '//www.e-tutungerie.ro/index.php?route=product/product/write&product_id=182';
+        var strRatingUrl = 'https://www.e-tutungerie.ro/index.php?route=product/product/write&product_id=182';
 
         $('#button-review').on('click', function() {
             $.ajax({
