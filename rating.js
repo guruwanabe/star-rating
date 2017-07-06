@@ -82,7 +82,7 @@
                     success: function(data, request) {
                       if (data['error']) {
                         //console
-                        $('#console').html( data['error'], request.getResponseHeader('some_header') );
+                        $('#console').html( data['error']);
                          //error message
                         $('.form-group').first().before('<div class="alert alert-warning">' + data['error'] + '</div>');
 
