@@ -69,7 +69,7 @@
                 type: 'POST',
                 url: strRatingUrl,
                 dataType: 'json',
-                data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&captcha='+encodeURIComponent($('input[name=\'captcha\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : '',
+                data: 'text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&captcha='+encodeURIComponent($('input[name=\'captcha\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']').val() ? $('input[name=\'rating\']').val() : ''),
                     beforeSend: function() {
                       $('.alert-warning, .alert-success').remove();
                       $('#button-review').attr('disabled', true);
